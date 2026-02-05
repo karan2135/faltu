@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Special for Anshika 💖</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', sans-serif;
+    background:linear-gradient(to bottom right,#ffb6c1,#ffe4e1);
+    text-align:center;
+    overflow-x:hidden;
+}
+.section{
+    padding:60px 20px;
+}
+h1,h2,h3{
+    color:#c2185b;
+}
+p{
+    font-size:18px;
+    color:#444;
+}
+button{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#e91e63;
+    color:white;
+    cursor:pointer;
+}
+button:hover{
+    background:#ad1457;
+}
+.hidden{
+    display:none;
+}
+.card{
+    background:white;
+    max-width:700px;
+    margin:auto;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+.heart{
+    position:fixed;
+    bottom:0;
+    font-size:24px;
+    animation:float 5s linear infinite;
+}
+@keyframes float{
+    0%{transform:translateY(0); opacity:1;}
+    100%{transform:translateY(-800px); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SECTION 1 -->
+<div class="section">
+    <h1>Happy Valentine’s Day 💘</h1>
+    <h2>Anshika 💖</h2>
+    <p>
+        Today is special because you are special 🌹<br>
+        This little website is made only for you 💕
+    </p>
+    <button onclick="showSection2()">Start the Surprise 🎁</button>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section hidden" id="section2">
+    <div class="card">
+        <h2>A Letter From My Heart 💌</h2>
+        <p>
+            Anshika,<br><br>
+            From the moment you came into my life, everything changed.<br>
+            Your smile heals me, your voice comforts me,<br>
+            and your love completes me ❤️
+        </p>
+        <p>
+            I don’t need a perfect world,<br>
+            I just need <b>you</b> in mine ♾️
+        </p>
+        <button onclick="showSection3()">One More Surprise 💖</button>
+    </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section hidden" id="section3">
+    <div class="card">
+        <h2>Just One Question 😍</h2>
+        <p style="font-size:22px;">
+            Will you be my Valentine forever, Anshika? 💕
+        </p>
+        <button onclick="showSection4()">YES 💖</button>
+    </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section hidden" id="section4">
+    <div class="card">
+        <h2>You Made Me the Happiest 😘</h2>
+        <p>
+            Thank you for choosing me.<br>
+            I promise to love you, respect you,<br>
+            and stand by you always 💑
+        </p>
+        <h3>❤️ I Love You Anshika ❤️</h3>
+        <p>— Yours forever, <b>Ashutosh</b></p>
+    </div>
+</div>
+
+<script>
+function showSection2(){
+    document.getElementById("section2").classList.remove("hidden");
+    window.scrollBy(0,600);
+}
+function showSection3(){
+    document.getElementById("section3").classList.remove("hidden");
+    window.scrollBy(0,600);
+}
+function showSection4(){
+    document.getElementById("section4").classList.remove("hidden");
+    startHearts();
+    window.scrollBy(0,600);
+}
+function startHearts(){
+    setInterval(()=>{
+        let heart=document.createElement("div");
+        heart.className="heart";
+        heart.innerHTML="❤️";
+        heart.style.left=Math.random()*100+"vw";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),5000);
+    },300);
+}
+</script>
+
+</body>
+</html>
